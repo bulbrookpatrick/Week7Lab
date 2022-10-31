@@ -4,11 +4,60 @@
  * and open the template in the editor.
  */
 package models;
-
+import java.io.Serializable;
 /**
  *
  * @author Patrick
  */
-public class User {
+public class User implements Serializable {
+    private String email;
+    private String fName;
+    private String lName;
+    private String password;
+
+    public User(){}
+    
+    public User(String email, String fName, String lName, String password) {
+        this.email = email;
+        this.fName = fName;
+        this.lName = lName;
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getfName() {
+        return fName;
+    }
+
+    public String getlName() {
+        return lName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setfName(String fName) {
+        this.fName = fName;
+    }
+
+    public void setlName(String lName) {
+        this.lName = lName;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
+    
+    
+    
     
 }
