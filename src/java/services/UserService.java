@@ -6,6 +6,7 @@
 package services;
 
 import dataaccess.UserDB;
+import java.util.List;
 
 import models.User;
 
@@ -14,20 +15,29 @@ import models.User;
  * @author Patrick
  */
 public class UserService {
+    public User get(String email) throws Exception {
+        UserDB userDB = new UserDB();
+        User user = userDB.get(email);
+        return user;
+        
+    }
+    
+    public List<User> getAll(String email) throws Exception {
+        UserDB userDB = new UserDB();
+        List<User> users = userDB.getAll(email);
+        return users;
+    }
     
     
     
     
-    
-    
-    
-    public void insert(String email, String fName, String lName, String password, int role) {
+    public void insert(String email, String fName, String lName, String password, int role) throws Exception {
         User user = new User(email, fName, lName, password, role);
         UserDB userDB = new UserDB();
         userDB.insert(user);
     }
     
-    public void update(String email, String fName, String lName, String password, int role) {
+    public void update(String email, String fName, String lName, String password, int role) throws Exception{
         User user = new User(email, fName, lName, password, role);
         UserDB userDB = new UserDB();
         userDB.update(user);  
